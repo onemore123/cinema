@@ -15,4 +15,18 @@ services:
     restart: always
     ports:
       - 5432:5432
-    
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER_FILE: /run/secrets/db_user
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+      POSTGRES_DB: cinema
+    volumes: 
+      - ./data/postgres:/var/lib/postgresql/data
+    secrets:
+      - db_user
+      - db_password
+secrets:
+  db_user:
+    file: ./docker/secrets/db/secrets_user.txt
+  db_password:
+    file: ./docker/secrets/db/secrets_password.txt
