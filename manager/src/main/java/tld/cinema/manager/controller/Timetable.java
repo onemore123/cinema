@@ -17,10 +17,10 @@ public class Timetable {
         MovieDetails md = new MovieDetails();
         md.setName("The Lord of the Rings: The Fellowship of the Ring");
         md.setRuntime(2 * 60 + 58);
-        // Set<Genres> genre = new HashSet<Genres>();
-        // genre.add(Genres.ACTION);
-        // md.setGenres(genre);
-        // md.setSertificate(Certificates.PG_13);
+        Set<Genres> genre = new HashSet<>();
+        genre.add(Genres.ACTION);
+        md.setGenres(genre);
+        md.setCertificate(Certificates.PG_13);
 
         List<Movie> movies = new ArrayList<>();
         movies.add(Movie.instanceOf(md));
