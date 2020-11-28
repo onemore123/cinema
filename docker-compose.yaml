@@ -9,6 +9,8 @@ services:
       - 8080:8080
     depends_on:
       - db
+    networks: 
+      - backend
   db:
     build: ./docker/postgres/
     container_name: postgres
@@ -24,8 +26,13 @@ services:
     secrets:
       - db_user
       - db_password
+    networks: 
+      - backend
 secrets:
   db_user:
     file: ./docker/secrets/db/secrets_user.txt
   db_password:
     file: ./docker/secrets/db/secrets_password.txt
+networks:
+  backend:
+    name: app_backend
