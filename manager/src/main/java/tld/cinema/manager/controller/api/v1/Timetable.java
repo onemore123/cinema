@@ -1,4 +1,4 @@
-package tld.cinema.manager.controller;
+package tld.cinema.manager.controller.api.v1;
 
 import java.util.*;
 
@@ -31,12 +31,17 @@ public class Timetable {
         List<Movie> movies = new ArrayList<>();
         movies.add(Movie.instanceOf(md));
 
-        // Customer customer = new Customer();
-        // customer.setEmail("customer@domain.tld");
-        // customer.setUsername("customer");
-
-        // customerRepository.save(customer);
+        Customer customer = new Customer();
+        customer.setEmail("customer@cinema.tld");
+        customerRepository.saveAndFlush(customer);
 
         return movies;
+    }
+
+    @GetMapping("/customer")
+    public Customer customer() {
+        Customer customer = customerRepository.findByEmail("customer@cinema.tld");
+
+        return customer;
     }
 }

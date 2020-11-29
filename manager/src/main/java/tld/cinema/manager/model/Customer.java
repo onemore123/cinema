@@ -1,16 +1,25 @@
 package tld.cinema.manager.model;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String email;
     private String username;
+    private static AtomicLong counter = new AtomicLong();
+
+    public Long getId() {
+        return this.id;
+    }
 
     public void setEmail(String email) {
         this.email = email;
