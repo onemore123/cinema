@@ -15,7 +15,6 @@ public class Customer {
     private Long id;
     private String email;
     private String username;
-    private static AtomicLong counter = new AtomicLong();
 
     public Long getId() {
         return this.id;

@@ -5,7 +5,7 @@ import java.util.Set;
 import tld.cinema.manager.enumerations.Certificates;
 import tld.cinema.manager.enumerations.Genres;
 
-public interface MovieData {
+public interface Movie {
     public long getId();
     public String getName();
     public int getRuntime();

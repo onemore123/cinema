@@ -5,29 +5,23 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import tld.cinema.manager.enumerations.Certificates;
 import tld.cinema.manager.enumerations.Genres;
-import tld.cinema.manager.interfaces.MovieData;
+import tld.cinema.manager.interfaces.Movie;
 
-public final class Movie {
+public final class Movie implements Movie {
     private final long id;
     private final String name;
     private final int runtime;
     private final Set<Genres> genres;
     private final Certificates certificate;
-    private static AtomicLong counter;
 
     private Movie(String name, int runtime, Set<Genres> genres, Certificates certificate) {
-        if (Movie.counter == null) {
-            Movie.counter = new AtomicLong();
-        }
-
-        this.id = Movie.counter.incrementAndGet();
         this.name = name;
         this.runtime = runtime;
         this.genres = genres;
         this.certificate = certificate;
     }
 
-    public static Movie instanceOf(MovieData data) {
+    public static Movie instanceOf(Movie data) {
         Movie movie = new Movie(
             data.getName(),
             data.getRuntime(),

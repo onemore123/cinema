@@ -5,9 +5,9 @@ import java.util.Set;
 
 import tld.cinema.manager.enumerations.Certificates;
 import tld.cinema.manager.enumerations.Genres;
-import tld.cinema.manager.interfaces.MovieData;
+import tld.cinema.manager.interfaces.Movie;
 
-public class MovieDetails implements MovieData {
+public class MovieDetails implements Movie {
     private long id;
     private String name;
     private int runtime;
