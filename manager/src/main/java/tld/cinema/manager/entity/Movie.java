@@ -1,7 +1,6 @@
-package tld.cinema.manager.model;
+package tld.cinema.manager.entity;
 
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicLong;
 
 import tld.cinema.manager.enumerations.Certificates;
 import tld.cinema.manager.enumerations.Genres;

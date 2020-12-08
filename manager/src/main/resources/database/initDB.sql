@@ -1,5 +1,4 @@
-DROP TABLE IF EXISTS customer CASCADE;
-CREATE TABLE customer (
+CREATE TABLE IF NOT EXISTS customer (
   id         SERIAL,
   email       TEXT,
   username      TEXT,

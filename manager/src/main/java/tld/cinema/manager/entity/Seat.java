@@ -1,4 +1,4 @@
-package tld.cinema.manager.model;
+package tld.cinema.manager.entity;
 
 import tld.cinema.manager.interfaces.Seat;
 
