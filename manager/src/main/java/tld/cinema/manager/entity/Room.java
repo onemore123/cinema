@@ -2,14 +2,14 @@ package tld.cinema.manager.entity;
 
 import java.util.List;
 
-import javax.persistence;
+import javax.persistence.*;
 
 import tld.cinema.manager.interfaces.ScreeningRoom;
 import tld.cinema.manager.interfaces.Seat;
 
 @Entity
-@Table(name = "screening_room")
-public class ScreeningRoom implements ScreeningRoom {
+@Table(name = "room")
+public class Room implements ScreeningRoom {
     @Id
     @GeneratedValue
     private Long id;
@@ -17,8 +17,8 @@ public class ScreeningRoom implements ScreeningRoom {
     private int roomCapacity;
     private List<Seat> seats;
 
-    public static ScreeningRoom instanceOf(int roomNumber, int roomCapacity) {
-        ScreeningRoom room = new ScreeningRoom();
+    public static Room instanceOf(int roomNumber, int roomCapacity) {
+        Room room = new Room();
         room.roomNumber = roomNumber;
         room.roomCapacity = roomCapacity;
 

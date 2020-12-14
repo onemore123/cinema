@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,8 +18,8 @@ public class Customer {
     private final String username;
 
     public static class Builder {
-        private final String email;
-        private final String username;
+        private String email;
+        private String username;
 
         public Builder(String email) {
             this.email = email;

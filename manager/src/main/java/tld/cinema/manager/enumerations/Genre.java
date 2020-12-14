@@ -1,6 +1,6 @@
 package tld.cinema.manager.enumerations;
 
-public enum Genres {
+public enum Genre {
     ACTION,
     ADVENTURE,
     ANIMATION,

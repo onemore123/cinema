@@ -1,17 +1,11 @@
 package tld.cinema.manager.entity;
 
+import tld.cinema.manager.interfaces.ScreeningRoomSeat;
 import tld.cinema.manager.interfaces.Seat;
 
-public abstract class Seat implements Seat {
+public abstract class RoomSeat implements ScreeningRoomSeat {
     private Long id;
     private int number;
-
-    public static Seat instanceOf(int number) {
-        Seat seat = new Seat();
-        seat.number = number;
-
-        return seat;
-    }
 
     public Long id() {
         return this.id;
@@ -32,11 +26,11 @@ public abstract class Seat implements Seat {
             return true;
         }
 
-        if (!(obj instanceof Seat)) {
+        if (!(obj instanceof RoomSeat)) {
             return false;
         }
 
-        Seat seat = (Seat)obj;
+        RoomSeat seat = (RoomSeat)obj;
 
         return id == seat.id
             && number == seat.number;

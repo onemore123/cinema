@@ -6,7 +6,7 @@ package tld.cinema.manager.interfaces;
 public interface Seat {
     /**
      * Seat ordinal number
-     * @return int positive number of the seat
+     * @return integer positive number of the seat
      */
     public int number();
 }

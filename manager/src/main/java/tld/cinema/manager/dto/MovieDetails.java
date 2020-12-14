@@ -3,16 +3,16 @@ package tld.cinema.manager.dto;
 import java.util.HashSet;
 import java.util.Set;
 
-import tld.cinema.manager.enumerations.Certificates;
-import tld.cinema.manager.enumerations.Genres;
-import tld.cinema.manager.interfaces.Movie;
+import tld.cinema.manager.enumerations.Certificate;
+import tld.cinema.manager.enumerations.Genre;
+import tld.cinema.manager.interfaces.Film;
 
-public class MovieDetails implements Movie {
+public class MovieDetails implements Film {
     private long id;
     private String name;
     private int runtime;
-    private HashSet<Genres> genres;
-    private Certificates certificate;
+    private HashSet<Genre> genres;
+    private Certificate certificate;
 
     public MovieDetails setId(long id) {
         this.id = id;
@@ -32,19 +32,19 @@ public class MovieDetails implements Movie {
         return this;
     }
 
-    public MovieDetails setGenres(Set<Genres> genres) {
-        this.genres = new HashSet<Genres>(genres);
+    public MovieDetails setGenres(Set<Genre> genres) {
+        this.genres = new HashSet<Genre>(genres);
 
         return this;
     }
 
-    public MovieDetails setCertificate(Certificates certificate) {
+    public MovieDetails setCertificate(Certificate certificate) {
         this.certificate = certificate;
 
         return this;
     }
 
-    @Override
+
     public long getId() {
         return id;
     }
@@ -60,12 +60,12 @@ public class MovieDetails implements Movie {
     }
 
     @Override
-    public Set<Genres> getGenres() {
+    public Set<Genre> getGenres() {
         return genres;
     }
 
     @Override
-    public Certificates getCertificate() {
+    public Certificate getCertificate() {
         return certificate;
     }
 }

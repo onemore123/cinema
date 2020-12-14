@@ -2,18 +2,18 @@ package tld.cinema.manager.entity;
 
 import java.util.Set;
 
-import tld.cinema.manager.enumerations.Certificates;
-import tld.cinema.manager.enumerations.Genres;
-import tld.cinema.manager.interfaces.Movie;
+import tld.cinema.manager.enumerations.Certificate;
+import tld.cinema.manager.enumerations.Genre;
+import tld.cinema.manager.interfaces.Film;
 
-public final class Movie implements Movie {
+public final class Movie implements Film {
     private final long id;
     private final String name;
     private final int runtime;
-    private final Set<Genres> genres;
-    private final Certificates certificate;
+    private final Set<Genre> genres;
+    private final Certificate certificate;
 
-    private Movie(String name, int runtime, Set<Genres> genres, Certificates certificate) {
+    private Movie(String name, int runtime, Set<Genre> genres, Certificate certificate) {
         this.name = name;
         this.runtime = runtime;
         this.genres = genres;
@@ -44,11 +44,11 @@ public final class Movie implements Movie {
         return runtime;
     }
 
-    public Set<Genres> getGenres() {
+    public Set<Genre> getGenres() {
         return genres;
     }
 
-    public Certificates getCertificate() {
+    public Certificate getCertificate() {
         return certificate;
     }
 

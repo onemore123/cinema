@@ -1,4 +1,4 @@
-import tld.cinema.manager.interfaces.Seat;
+package tld.cinema.manager.interfaces;
 
 /**
  * A chair in the cinema's screening room
